@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!--<!DOCTYPE log4j:configuration PUBLIC "-//log4j/log4j Configuration//EN" "log4j.dtd">-->
+<!DOCTYPE log4j:configuration SYSTEM "log4j.dtd">
+<log4j:configuration>
+    <appender name="stdout" class="org.apache.log4j.ConsoleAppender">
+        <layout class="org.apache.log4j.PatternLayout">
+            <param name="ConversionPattern" value="[%p][%d{yyyy-MM-dd HH:mm:ss SSS}][%c]-[%L]-[%m]%n"/>
+        </layout>
+    </appender>
+<!--    <appender name="FILE" class="org.apache.Log4j.FileAppender">-->
+
+<!--        <param name="file" value="${log}/log.out"/>-->
+<!--        <param name="immediateFlush" value="true"/>-->
+<!--        <param name="threshold" value="debug"/>-->
+<!--        <param name="append" value="false"/>-->
+
+<!--        <layout class="org.apache.Log4j.PatternLayout">-->
+<!--            <param name="conversionPattern" value="%m%n"/>-->
+<!--        </layout>-->
+<!--    </appender>-->
+<!--    <logger name="Log4j.rootLogger" additivity="false">-->
+<!--        <level value="INFO"/>-->
+<!--        <appender-ref ref="stdout"></appender-ref>-->
+<!--    </logger>-->
+    <root>
+        <level value="DEBUG"></level>
+        <appender-ref ref="stdout"/>
+    </root>
+
+</log4j:configuration>

@@ -1,0 +1,64 @@
+Manifest-Version: 1.0
+Class-Path: jackson-xc-1.8.3.jar transport-netty3-client-5.5.2.jar htt
+ pcore-4.4.4.jar netty-buffer-4.1.11.Final.jar jna-4.4.0.jar commons-i
+ o-2.2.jar guava-11.0.2.jar netty-resolver-4.1.11.Final.jar spring-aop
+ -4.2.5.RELEASE.jar xmlbeans-2.6.0.jar lucene-queryparser-6.6.0.jar to
+ ols.jar druid-1.0.2.jar netty-handler-4.1.11.Final.jar spring-express
+ ion-4.2.5.RELEASE.jar kafka_2.10-0.9.0.1.jar hadoop-common-2.8.0.jar 
+ jackson-databind-2.6.5.jar curator-client-2.7.1.jar quartz-2.2.3.jar 
+ jettison-1.1.jar java-xmlbuilder-0.4.jar rest-5.5.2.jar netty-3.6.2.F
+ inal.jar lucene-spatial3d-6.6.0.jar lucene-join-6.6.0.jar amqp-client
+ -4.0.0.jar netty-all-4.1.17.Final.jar httpcore-nio-4.4.5.jar poi-3.14
+ .jar lucene-memory-6.6.0.jar curator-recipes-2.7.1.jar json-smart-1.1
+ .1.jar commons-fileupload-1.3.1.jar spring-beans-4.2.5.RELEASE.jar ja
+ ckson-core-2.6.5.jar api-util-1.0.0-M20.jar protobuf-java-2.5.0.jar h
+ ttpclient-4.5.2.jar commons-beanutils-core-1.8.0.jar commons-math3-3.
+ 1.1.jar netty-transport-4.1.11.Final.jar jackson-annotations-2.6.0.ja
+ r htrace-core4-4.0.1-incubating.jar netty-common-4.1.11.Final.jar jer
+ sey-client-1.9.jar spring-core-4.2.5.RELEASE.jar aspectjrt-1.6.11.jar
+  stax-api-1.0.1.jar xz-1.0.jar lucene-grouping-6.6.0.jar spring-tx-4.
+ 2.5.RELEASE.jar fastjson-1.1.30.jar httpasyncclient-4.1.2.jar commons
+ -cli-1.2.jar percolator-client-5.5.2.jar jline-0.9.94.jar api-asn1-ap
+ i-1.0.0-M20.jar spring-security-core-4.1.0.RELEASE.jar commons-codec-
+ 1.2.jar guice-3.0.jar gson-2.6.jar commons-httpclient-3.1.jar jopt-si
+ mple-3.2.jar jersey-core-1.9.jar aopalliance-1.0.jar jsp-api-2.1.jar 
+ elasticsearch-5.5.2.jar lz4-1.2.0.jar reindex-client-5.5.2.jar asm-3.
+ 1.jar lucene-sandbox-6.6.0.jar spring-security-config-4.1.0.RELEASE.j
+ ar lucene-misc-6.6.0.jar log4j-api-2.7.jar commons-logging-1.1.1.jar 
+ jackson-mapper-asl-1.9.13.jar spring-context-4.2.5.RELEASE.jar joda-t
+ ime-2.9.5.jar jedis-2.8.1.jar apacheds-i18n-2.0.0-M15.jar zkclient-0.
+ 7.jar commons-collections-3.2.1.jar mybatis-spring-1.2.4.jar hadoop-a
+ uth-2.8.0.jar compiler-0.9.3.jar spring-webmvc-4.2.5.RELEASE.jar snak
+ eyaml-1.15.jar hadoop-annotations-2.8.0.jar hadoop-yarn-common-2.8.0.
+ jar mysql-connector-java-5.1.23.jar lucene-spatial-6.6.0.jar jackson-
+ dataformat-smile-2.8.6.jar apacheds-kerberos-codec-2.0.0-M15.jar luce
+ ne-backward-codecs-6.6.0.jar jsr305-3.0.0.jar lucene-highlighter-6.6.
+ 0.jar jetty-util-6.1.26.jar spring-jdbc-4.2.5.RELEASE.jar spring-web-
+ 4.2.5.RELEASE.jar HdrHistogram-2.1.9.jar jetty-6.1.26.jar jcip-annota
+ tions-1.0.jar aspectjweaver-1.6.11.jar mybatis-3.3.0.jar poi-scratchp
+ ad-3.14.jar commons-pool2-2.4.2.jar jets3t-0.9.0.jar lucene-core-6.6.
+ 0.jar curvesapi-1.03.jar javax.inject-1.jar t-digest-3.0.jar hppc-0.7
+ .1.jar metrics-core-2.2.0.jar jaxb-api-2.2.2.jar commons-lang-2.6.jar
+  lucene-spatial-extras-6.6.0.jar lucene-analyzers-common-6.6.0.jar po
+ i-ooxml-schemas-3.14.jar jackson-core-asl-1.9.13.jar commons-configur
+ ation-1.6.jar jsch-0.1.51.jar activation-1.1.jar guice-servlet-3.0.ja
+ r ezmorph-1.0.6.jar transport-netty4-client-5.5.2.jar jackson-datafor
+ mat-yaml-2.8.6.jar paranamer-2.3.jar kafka-clients-0.9.0.1.jar jersey
+ -guice-1.9.jar spring-context-support-4.2.5.RELEASE.jar lucene-querie
+ s-6.6.0.jar hadoop-yarn-api-2.8.0.jar xmlenc-0.52.jar parent-join-cli
+ ent-5.5.2.jar junit-4.11.jar bcprov-jdk15on-1.56.jar log4j-1.2.17.jar
+  commons-beanutils-1.8.0.jar lucene-suggest-6.6.0.jar slf4j-api-1.7.2
+ 1.jar commons-net-3.1.jar jersey-server-1.9.jar hamcrest-core-1.3.jar
+  snappy-java-1.1.1.7.jar transport-5.5.2.jar commons-digester-1.8.jar
+  jackson-dataformat-cbor-2.8.6.jar spring-test-4.2.5.RELEASE.jar nett
+ y-codec-http-4.1.11.Final.jar log4j-core-2.7.jar netty-codec-4.1.11.F
+ inal.jar lang-mustache-client-5.5.2.jar nimbus-jose-jwt-3.9.jar jetty
+ -sslengine-6.1.26.jar c3p0-0.9.1.1.jar spring-security-web-4.1.0.RELE
+ ASE.jar jaxb-impl-2.2.3-1.jar spring-orm-4.2.5.RELEASE.jar avro-1.7.4
+ .jar jackson-jaxrs-1.8.3.jar zookeeper-3.4.6.jar httpmime-4.5.2.jar c
+ ommons-compress-1.4.1.jar stax-api-1.0-2.jar hadoop-mapreduce-client-
+ core-2.8.0.jar curator-framework-2.7.1.jar slf4j-log4j12-1.7.21.jar j
+ son-lib-2.4-jdk15.jar poi-ooxml-3.14.jar securesm-1.1.jar scala-libra
+ ry-2.10.5.jar jersey-json-1.9.jar
+Main-Class: com.hao.hadoop.wordcount.WordCountApp
+

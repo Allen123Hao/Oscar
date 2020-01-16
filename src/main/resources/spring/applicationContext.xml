@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+
+
+    <!--- 配置调度程序quartz ，其中配置JobDetail有两种方式 -->
+    <!--方式一：使用JobDetailBean，任务类必须实现Job接口 -->
+    <!--
+    <bean id="myJob" class="org.springframework.scheduling.quartz.JobDetailFactoryBean">
+        <property name="name" value="exampleJob"></property>
+        <property name="jobClass" value="com.oscar.service.SpringQtz1"></property>
+        <property name="jobDataAsMap">
+            <map>
+                <entry key="service">
+                    <value>simple is the beat</value>
+                </entry>
+            </map>
+        </property>
+    </bean>
+    -->
+
+    <bean id="SpringQtzJob" class="com.oscar.service.SpringQtz2"></bean>
+    <bean id="SpringQtzJobMethod" class="org.springframework.scheduling.quartz.MethodInvokingJobDetailFactoryBean">
+        <property name="targetObject">
+            <ref bean="SpringQtzJob"></ref>
+        </property>
+        <property name="targetMethod">
+            <value>execute</value>
+        </property>
+    </bean>
+
+
+    <!-- ======================== 调度触发器 ======================== -->
+    <bean id="CronTriggerBean" class="org.springframework.scheduling.quartz.CronTriggerFactoryBean">
+        <!-- 第一种方式 -->
+        <!--<property name="jobDetail" ref="myJob"></property>-->
+        <!-- 第二种方式 -->
+        <property name="jobDetail" ref="SpringQtzJobMethod"></property>
+        <property name="cronExpression" value="0/5 * * * * ?"></property>
+    </bean>
+    <!-- ======================== 调度工厂 ======================== -->
+    <bean id="SpringJobSchedulerFactoryBean" class="org.springframework.scheduling.quartz.SchedulerFactoryBean">
+        <property name="triggers">
+            <list>
+                <!--<ref bean="CronTriggerBean"></ref>-->
+            </list>
+        </property>
+    </bean>
+</beans>

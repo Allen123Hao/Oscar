@@ -1,0 +1,16 @@
+FS_HDFS_IMPL=org.apache.hadoop.hdfs.DistributedFileSystem
+
+socket1=socket1
+socket1_ip=127.0.0.1
+socket1_port=8001
+socket1_isKeep=1
+
+socket2=socket2
+socket2_ip=127.0.0.1
+socket2_port=8001
+socket2_isKeep=0
+
+# 连接的数量，一定要和实际配置的数量匹配
+socketConnCount=2
+# 公共的检测间隔秒
+commonCheckTime=5

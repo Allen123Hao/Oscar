@@ -1,0 +1,20 @@
+RMI的本质就是实现在不同JVM之间的调用,它的实现方法就是在两个JVM中各开一个Stub和Skeleton，
+二者通过socket通信来实现参数和返回值的传递。
+有关RMI的例子代码网上可以找到不少,但绝大部分都是通过extend the interface java.rmi.Remote实现，
+已经封装的很完善了，不免使人有雾里看花的感觉。下面的例子是我在《Enterprise JavaBeans》里看到的，虽然很粗糙，
+但很直观，利于很快了解它的工作原理。
+1. 定义一个Person的接口，其中有两个business method, getAge() 和getName()
+2. Person的实现PersonServer类。PersonServer代码:
+3. 好，我们现在要在Client机器上调用getAge()和getName()这两个business method，那么就得编写相应的Stub(Client端)
+和Skeleton(Server端)程序。这是Stub的实现：Person_Stub代码
+注意，Person_Stub和PersonServer一样，都implements Person。它们都实现了getAge()和getName()两个business method，
+不同的是PersonServer是真的实现，Person_Stub是建立socket连接，并向Skeleton发请求，然后通过 Skeleton调用PersonServer的方法，
+最后接收返回的结果。
+4. 骨架（Skeleton）的实现。Person_Skeleton代码
+Skeleton类 extends from Thread，它长驻在后台运行，随时接收client发过来的request。并根据发送过来的key去调用相应的business method。
+5. 最后一个，Client的实现
+Client(PersonClient)的本质是，它要知道Person接口的定义，并实例一个Person_Stub，通过Stub来调用business method,至于Stub怎么去和Server沟通，Client就不用管了。
+注意它的写法：
+Person person = new Person_Stub();而不是Person_Stub person = new Person_Stub();为什么？因为要面向接口编程嘛，呵呵。
+//RMI实质上就是生成2个类stub，skeleton来进行参数和返回值的传递，采用值传递方式
+//类似于以前写的聊天室程序，被传递的对象应实现java.io.Serializable接口

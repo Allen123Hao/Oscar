@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans  
+     http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<!-- 主数据库 -->
+	<bean name="masterDataSource" class="com.alibaba.druid.pool.DruidDataSource"  destroy-method="close">
+<!-- <property name="filters" value="config" /> -->
+       	<!--<property name="connectionProperties" value="config.file=file:///home/work/apps/conf/dbconfig.properties" />-->
+		<property name="url" value="${jdbc_url}" />
+	    <property name="username" value="${jdbc_user}" />
+	    <property name="password" value="${jdbc_password}" />
+      	<property name="initialSize" value="20" />
+    	<property name="minIdle" value="20" />
+    	<property name="maxActive" value="100" />
+    	<property name="maxWait" value="60000" />
+
+	</bean>
+
+	<bean id="transactionManager"
+		  class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
+		<property name="dataSource" ref="masterDataSource" />
+	</bean>
+
+	<bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
+		<property name="dataSource" ref="masterDataSource" />
+		<property name="mapperLocations" value="classpath:sqlmap/*.xml" />
+		<property name="configLocation" value="classpath:springtest/mybatis-config.xml" />
+	</bean>
+
+	<!-- 配置扫描器 -->
+	<bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
+		<!-- 扫描me.gacl.dao这个包以及它的子包下的所有映射接口类 -->
+		<property name="basePackage" value="com.oscar.mapper" />
+		<property name="sqlSessionFactoryBeanName" value="sqlSessionFactory" />
+	</bean>
+
+	<bean id="sqlSession" class="org.mybatis.spring.SqlSessionTemplate">
+		<constructor-arg index="0" ref="sqlSessionFactory" />
+	</bean>
+
+</beans>
