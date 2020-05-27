@@ -23,6 +23,11 @@ public class Demo1 {
         System.out.println(a & 31);
         System.out.println(a >> 3);
     }
+
+    public void func3(){
+        int i = 1;
+        System.out.println(Integer.toBinaryString(i));
+    }
     public static void main(String[] args) {
         Demo1 demo1 = new Demo1();
         demo1.func2();

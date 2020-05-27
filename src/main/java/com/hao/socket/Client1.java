@@ -1,6 +1,8 @@
 package com.hao.socket;
 
 import java.io.*;
+import java.net.InetAddress;
+import java.net.InetSocketAddress;
 import java.net.Socket;
 
 /**
@@ -16,7 +18,7 @@ public class Client1 {
         String host = "127.0.0.1";
         int port = 8899;
         try {
-            Socket client = new Socket(host,port);
+            Socket client = new Socket(host,port,InetAddress.getByName("localhost"),8080);
             Writer writer = new OutputStreamWriter(client.getOutputStream());
             writer.write("Hello World!");
             writer.flush();

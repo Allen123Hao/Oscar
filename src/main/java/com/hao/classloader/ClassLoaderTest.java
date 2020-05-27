@@ -1,5 +1,7 @@
 package com.hao.classloader;
 
+import java.lang.reflect.Method;
+
 /**
  * <code>ClassLoaderTest</code>
  *
@@ -23,7 +25,7 @@ public class ClassLoaderTest {
 
     private void func2(){
 //        String rootUrl = "http://localhost:8090/httpweb/";
-        String rootUrl = "file:///Users/haoxueqiang/WorkSpace/Oscar/oscar/target/classes/";
+        String rootUrl = "file:///Users/haoxueqiang/WorkSpace/oscar/target/classes/";
         NetWorkClassLoader netWorkClassLoader = new NetWorkClassLoader(rootUrl);
         String className = "com.hao.classloader.NetWorkClassLoader";
         Class clazz = null;
@@ -33,6 +35,21 @@ public class ClassLoaderTest {
             e.printStackTrace();
         }
         System.out.println(clazz.getClassLoader());
+    }
+
+    private void func5() throws Exception{
+        String rootUrl = "file:///Users/haoxueqiang/WorkSpace/oscar/target/classes/";
+        NetWorkClassLoader netWorkClassLoader = new NetWorkClassLoader(rootUrl);
+        String className = "com.hao.classloader.AbcBean";
+        Class clazz = null;
+        try {
+            clazz = netWorkClassLoader.loadClass(className);
+        } catch (ClassNotFoundException e) {
+            e.printStackTrace();
+        }
+        Method method = clazz.getMethod("greeting");
+        method.setAccessible(true);
+        method.invoke(clazz.newInstance());
     }
 
     public void func3(){
@@ -75,10 +92,13 @@ public class ClassLoaderTest {
 
 
 
-    public static void main(String[] args) {
-        ClassLoaderTest classLoaderTest = new ClassLoaderTest();
+    public static void main(String[] args) throws Exception{
+//        ClassLoaderTest classLoaderTest = new ClassLoaderTest();
 //        classLoaderTest.flag = 10;
-        classLoaderTest.func2();
+//        classLoaderTest.func5();
+        Class clazz = Class.forName("com.hao.classloader.ICustomerClassLoader");
+        Class[] clazzes = clazz.getInterfaces();
+        System.out.println(clazzes.length);
     }
 
 }

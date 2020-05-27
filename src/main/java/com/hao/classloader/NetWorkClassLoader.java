@@ -21,14 +21,17 @@ public class NetWorkClassLoader extends ClassLoader{
         this.rootUrl = rootUrl;
     }
 
+    //如果自定义的方法不想违背双亲委派模型，则只需要重写findclass方法即可，
+    // 如果想违背双亲委派模型，则还需要重写loadclass方法。
     @Override
     public Class<?> loadClass(String name) throws ClassNotFoundException{
-        Class<?> clazz = findLoadedClass(name);
-        if(clazz == null){
-            System.out.println("can't load from AppClassLoader");
-            return findClass(name);
-        }
-        return null;
+//        Class<?> clazz = findLoadedClass(name);
+//        if(clazz == null){
+//            System.out.println("can't load from AppClassLoader");
+//            return findClass(name);
+//        }
+//        return null;
+        return super.loadClass(name);
 
     }
 

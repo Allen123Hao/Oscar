@@ -23,12 +23,13 @@ public class Server {
                 Socket socket = serverSocket.accept();
                 //跟客户端建立好连接之后，我们就可以获取socket的InputStream，并从中读取客户端发过来的信息了。
                 Reader reader = new InputStreamReader(socket.getInputStream());
-                char[] chars = new char[64];
+                char[] chars = new char[1024];
                 int len;
                 int index;
                 StringBuilder sb = new StringBuilder();
                 while((len = reader.read(chars)) != -1){
                     String temp = new String(chars,0,len);
+                    System.out.println(temp);
                     if((index = temp.indexOf("eof")) != -1){
                         sb.append(temp);
                         break;

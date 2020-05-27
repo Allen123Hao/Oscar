@@ -17,9 +17,11 @@ public class Server2 {
         int port = 8899;
         try {
             ServerSocket server = new ServerSocket(port);
+            int num = 0;
             while(true){
+                System.out.println("num:"+num++);
                 Socket socket = server.accept();
-                new Thread(new Task(socket)).start();
+                new Thread(new Task(socket),"thread-hao-"+num).start();
             }
         } catch (IOException e) {
             e.printStackTrace();
