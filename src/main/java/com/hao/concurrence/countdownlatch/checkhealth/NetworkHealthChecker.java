@@ -1,19 +1,19 @@
-package com.hao.concurrence.countdownlatch;
+package com.hao.concurrence.countdownlatch.checkhealth;
 
 import java.util.concurrent.CountDownLatch;
 
 /**
- * <code>CacheHealthChecker</code>
+ * <code>NetworkHealthChecker</code>
  *
  * @description:
  * @author: Hao Xueqiang(xueqiang.hao@tendcloud.com)
  * @creation: 2017/5/25
  * @version: 1.0
  */
-public class CacheHealthChecker extends BaseHealthChecker{
+public class NetworkHealthChecker extends BaseHealthChecker{
 
-    public CacheHealthChecker(CountDownLatch latch){
-        super("Cache service",latch);
+    public NetworkHealthChecker(CountDownLatch latch){
+        super("Network service",latch);
     }
 
     @Override
@@ -21,7 +21,7 @@ public class CacheHealthChecker extends BaseHealthChecker{
         System.out.println("Checking " + this.getServiceName());
         try
         {
-            Thread.sleep(10000);
+            Thread.sleep(7000);
         }
         catch (InterruptedException e)
         {

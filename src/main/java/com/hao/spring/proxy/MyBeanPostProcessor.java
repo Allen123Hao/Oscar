@@ -1,11 +1,12 @@
 package com.hao.spring.proxy;
 
-import org.jboss.netty.util.internal.ConcurrentHashMap;
+//import org.jboss.netty.util.internal.ConcurrentHashMap;
 import org.springframework.beans.BeansException;
 import org.springframework.beans.factory.config.BeanPostProcessor;
 
 import java.lang.reflect.Proxy;
 import java.util.Map;
+import java.util.concurrent.ConcurrentHashMap;
 
 /**
  * <code>MyBeanPostProcessor</code>

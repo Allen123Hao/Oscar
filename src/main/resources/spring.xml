@@ -3,7 +3,7 @@
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
-    <bean class="org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor" />
+<!--    <bean class="org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor" />-->
     <!--
               <bean class="com.hao.spring.Person" init-method="initialize" destroy-method="destroy"></bean>
               <bean class="com.hao.corejava.Demo2" init-method="initFun"></bean>
@@ -15,9 +15,14 @@
     </bean>
 
     <bean id="register" class="com.hao.spring.core.ApplicationContextRegister">
-        <property name="name">
-            <value>XXOO</value>
-        </property>
+        <property name="student" ref="student" />
+        <property name="name" value="XXOO" />
+<!--        <property name="student">-->
+<!--            <ref bean="student"></ref>-->
+<!--        </property>-->
+<!--        <property name="name">-->
+<!--            <value>XXOO</value>-->
+<!--        </property>-->
     </bean>
 
     <bean id="studentAction" class="com.hao.spring.core.StudenAction">

@@ -1,5 +1,8 @@
 package com.hao.lambda;
 
+import lombok.AllArgsConstructor;
+import lombok.NoArgsConstructor;
+
 /**
  * <code>People</code>
  *
@@ -8,6 +11,8 @@ package com.hao.lambda;
  * @creation: 2018/5/8
  * @version: 1.0
  */
+@NoArgsConstructor
+@AllArgsConstructor
 public class People {
 
     private Integer id;

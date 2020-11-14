@@ -84,12 +84,22 @@ public class TCPHandler implements Runnable {
         }
 
         state = 0; // 改變狀態
+//        printInterestOps(sk);
         sk.interestOps(SelectionKey.OP_READ); // 通過key改變通道註冊的事件
+//        printInterestOps(sk);
         sk.selector().wakeup(); // 使一個阻塞住的selector操作立即返回
     }
 
     void process(String str) {
         // do process(decode, logically process, encode)..
         // ..
+    }
+
+    private void printInterestOps(SelectionKey sk){
+        int ops = sk.interestOps();
+        System.out.println(ops & SelectionKey.OP_ACCEPT);
+        System.out.println(ops & SelectionKey.OP_READ);
+        System.out.println(ops & SelectionKey.OP_WRITE);
+        System.out.println(ops & SelectionKey.OP_CONNECT);
     }
 }

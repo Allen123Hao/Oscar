@@ -28,8 +28,36 @@ public class Demo1 {
         int i = 1;
         System.out.println(Integer.toBinaryString(i));
     }
+
+    public void func4(){
+        int a = 21;
+        System.out.println(Integer.toBinaryString(a));
+        int b = -21;
+        System.out.println(Integer.toBinaryString(b));
+    }
+
+    public void func5(){
+        int a = -1;
+        System.out.println(Integer.toBinaryString(a));
+        System.out.println(Integer.toBinaryString(a << 29));
+        System.out.println(a << 29);
+        int b = 1;
+        System.out.println(Integer.toBinaryString(b));
+        System.out.println(Integer.toBinaryString(b << 29));
+        System.out.println(Integer.toBinaryString((b << 29) -1));
+    }
+
+    public void func6(){
+        int capacity = (1 << 29)-1;
+        System.out.println(Integer.toBinaryString(capacity));
+        int stop = 1 << 29;
+        System.out.println(Integer.toBinaryString(stop));
+        System.out.println(Integer.toBinaryString(stop & ~capacity));
+
+    }
+
     public static void main(String[] args) {
         Demo1 demo1 = new Demo1();
-        demo1.func2();
+        demo1.func5();
     }
 }

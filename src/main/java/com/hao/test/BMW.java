@@ -10,6 +10,15 @@ package com.hao.test;
  */
 public class BMW extends Car {
 
+    public BMW(){
+        System.out.println("BMW的无参构造方法");
+    }
+
+//    public BMW(float price){
+//        super(1,"宝马");
+//        this.price = price;
+//    }
+
     private float price;
 
     public float getPrice() {
@@ -20,7 +29,13 @@ public class BMW extends Car {
         this.price = price;
     }
 
-    public static void main(String[] args) {
+    public void func1(){
+        func2();
+    }
 
+    public static void main(String[] args) {
+//        BMW bmw = new BMW(1.0f);
+//        System.out.println(bmw.getName());
+        BMW bmw = new BMW();
     }
 }

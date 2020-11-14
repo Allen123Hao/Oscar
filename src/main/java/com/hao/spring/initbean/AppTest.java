@@ -25,7 +25,13 @@ public class AppTest {
 //
 //        employee.test();
 
-        Employer employer = (Employer) context.getBean("employer");
-        employer.test();
+//        Employer employer = (Employer) context.getBean("employer");
+//        employer.test();
+//        Employer2 employer2 = (Employer2) context.getBean("employer2");
+//        employer2.test();
+        Employer3 employer3 = (Employer3) context.getBean("employer3");
+        employer3.test();
+
+//        context.getBean("myFactoryBean");
     }
 }

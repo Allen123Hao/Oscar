@@ -16,7 +16,7 @@ import java.net.Socket;
 public class Client1 {
     public static void main(String[] args){
         String host = "127.0.0.1";
-        int port = 8899;
+        int port = 1333;
         try {
             Socket client = new Socket(host,port,InetAddress.getByName("localhost"),8080);
             Writer writer = new OutputStreamWriter(client.getOutputStream());

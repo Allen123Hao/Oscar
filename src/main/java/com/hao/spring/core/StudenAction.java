@@ -20,6 +20,7 @@ public class StudenAction {
     }
 
     public StudenAction(String name){
+        System.out.println("执行StudenAction的构造方法，name:"+name);
         this.name = name;
     }
 

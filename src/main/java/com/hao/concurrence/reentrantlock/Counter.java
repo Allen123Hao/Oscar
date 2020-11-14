@@ -18,6 +18,11 @@ public class Counter{
 
     public void printer(){
         lock.lock();
+        try {
+            Thread.sleep(1000*60*2);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
         try{
             for(int i=0;i<10;i++){
                 try {
@@ -49,6 +54,27 @@ public class Counter{
             lock.unlock();
         }
     }
+
+    public void printer2(){
+        try {
+            Thread.sleep(3000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+        lock.lock();
+        try {
+            for(int i=20;i<30;i++){
+                try {
+                    Thread.sleep(100);
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
+                System.out.println(Thread.currentThread().getName()+":"+i);
+            }
+        } finally {
+            lock.unlock();
+        }
+    }
 }
 class MyThread extends Thread{
     private Counter counter;
@@ -65,7 +91,7 @@ class MyThread extends Thread{
         if(this.code == 1){
             counter.printer();
         }else{
-            counter.printer1();
+            counter.printer2();
         }
 
     }
@@ -78,5 +104,6 @@ class App{
 
         thread1.start();
         thread2.start();
+
     }
 }

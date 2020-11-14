@@ -2,7 +2,7 @@ package com.hao.threadpool;
 
 /**
  * Project Name:ThreadTest
- * File Name:Test.java
+ * File Name:AppTest.java
  * Package Name:
  * Date:2015年1月12日下午3:37:06
  * Copyright (c) 2015, jujiasoft All Rights Reserved.
@@ -10,7 +10,7 @@ package com.hao.threadpool;
  */
 
 /**
- * ClassName:Test <br/>
+ * ClassName:AppTest <br/>
  * Function: TODO ADD FUNCTION. <br/>
  * Reason:	 TODO ADD REASON. <br/>
  * Date:     2015年1月12日 下午3:37:06 <br/>

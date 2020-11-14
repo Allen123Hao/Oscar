@@ -1,4 +1,4 @@
-package com.hao.concurrence.countdownlatch;
+package com.hao.concurrence.countdownlatch.checkhealth;
 
 import java.util.concurrent.CountDownLatch;
 

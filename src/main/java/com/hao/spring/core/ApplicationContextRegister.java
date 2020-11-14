@@ -17,12 +17,16 @@ import org.springframework.context.ApplicationContextAware;
  * @version: 1.0
  */
 public class ApplicationContextRegister implements ApplicationContextAware,InitializingBean {
-    private static Log log = LogFactory.getLog(ContextUtils.class);
+    private static Log log = LogFactory.getLog(ApplicationContextRegister.class);
 
     @Autowired
     private Student student;
 
     private String name;
+
+    public void setStudent(Student student){
+        this.student = student;
+    }
 
     public void setName(String name) {
         this.name=name;
@@ -31,10 +35,12 @@ public class ApplicationContextRegister implements ApplicationContextAware,Initi
     @Override
     public void setApplicationContext(ApplicationContext applicationContext) throws BeansException {
         System.out.println("ApplicationContextRegister.setApplicationContext==="+applicationContext);
-        System.out.println("Student.name:"+student.getName()+",age:"+student.getAge());
+        if(student != null){
+            System.out.println("Student.name:"+student.getName()+",age:"+student.getAge());
+        }
         System.out.println("name===:"+name);
         synchronized (ContextUtils.class) {
-            log.debug("setApplicationContext, notifyAll");
+            log.info("setApplicationContext, notifyAll");
             ContextUtils.applicationContext = applicationContext;
             ContextUtils.class.notifyAll();
         }

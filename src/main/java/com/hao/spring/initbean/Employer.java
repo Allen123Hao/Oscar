@@ -13,6 +13,18 @@ import org.springframework.beans.factory.config.BeanPostProcessor;
  */
 public class Employer {
 
+    private String name;
+
+    private double salary;
+
+    public void setName(String name){
+        this.name = name;
+    }
+
+    public void setSalary(double salary){
+        this.salary = salary;
+    }
+
     public Employer(){
         System.out.println("构造方法Employer()");
     }
@@ -28,6 +40,10 @@ public class Employer {
 //        System.out.println("Employer postProcessAfterInitialization,bean:"+bean+",beanName:"+beanName);
 //        return bean;
 //    }
+
+    public void initTest(){
+        System.out.println("执行employer的initTest方法");
+    }
 
 
     public void test(){

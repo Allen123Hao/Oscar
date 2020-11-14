@@ -8,6 +8,7 @@ package com.hao.java8.interfacepkg;
  * @creation: 2020-03-06
  * @version: 1.0
  */
+@FunctionalInterface
 public interface IMessage {
 
     void print(String msg);

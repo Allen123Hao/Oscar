@@ -8,21 +8,31 @@ http://www.springframework.org/schema/aop http://www.springframework.org/schema/
 http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-2.5.xsd">
 
     <!--==============测试Spring BeanFactory实例化Bean的过程-->
-    <bean id="employee1" class="com.hao.spring.initbean.Employee"
-          init-method="init" destroy-method="destroy">
-        <constructor-arg index="0">
-            <value>郝学强</value>
-        </constructor-arg>
-        <property name="department">
-            <value>bean2:研发部</value>
-        </property>
-        <property name="employer" ref="employer"></property>
+<!--    <bean id="employee1" class="com.hao.spring.initbean.Employee"-->
+<!--          init-method="init" destroy-method="destroy">-->
+<!--        <constructor-arg index="0">-->
+<!--            <value>郝学强</value>-->
+<!--        </constructor-arg>-->
+<!--        <property name="department">-->
+<!--            <value>bean2:研发部</value>-->
+<!--        </property>-->
+<!--        <property name="employer" ref="employer"></property>-->
+<!--    </bean>-->
+
+
+    <bean id="employer" class="com.hao.spring.initbean.Employer" init-method="initTest">
+        <property name="name" value="Allen"></property>
+        <property name="salary" value="3888.68"></property>
     </bean>
 
-
-    <bean id="employer" class="com.hao.spring.initbean.Employer">
+    <bean id="employer2" class="com.hao.spring.initbean.Employer2" init-method="initTest">
+        <property name="name" value="Hao"></property>
+        <property name="salary" value="3999.68"></property>
     </bean>
 
-    <bean id="myPostProcess" class="com.hao.spring.initbean.MyBeanPostProcessor"></bean>
+    <bean id="myPostProcess" class="com.hao.spring.initbean.MyBeanPostProcessor">
+        <property name="name" value="postProcess"></property>
+    </bean>
+    <bean id="myFactoryBean" class="com.hao.spring.initbean.MyFactoryBean"></bean>
 
 </beans>

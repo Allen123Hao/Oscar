@@ -16,18 +16,29 @@ public class AppTest {
     public static void main(String[] args) {
         String path = AppTest.class.getResource("").getPath();
 
-        FileSystemXmlApplicationContext context = new FileSystemXmlApplicationContext("/"+path+"spring-context.xml");
-        boolean isSingleton = context.getBeanFactory().isSingleton("testListener");
-        System.out.println("TestListener isSingleton:"+isSingleton);
+        System.out.println("path:"+path);
 
-        SimpleApplicationEventMulticaster eventMulticaster = (SimpleApplicationEventMulticaster) context.getBean("applicationEventMulticaster");
-        System.out.println("eventMulticaster:"+eventMulticaster);
+        FileSystemXmlApplicationContext context = new FileSystemXmlApplicationContext("/"+path+"spring-context.xml");
+//        boolean isSingleton = context.getBeanFactory().isSingleton("testListener");
+//        System.out.println("TestListener isSingleton:"+isSingleton);
+
+//        SimpleApplicationEventMulticaster eventMulticaster = (SimpleApplicationEventMulticaster) context.getBean("applicationEventMulticaster");
+//        System.out.println("eventMulticaster:"+eventMulticaster);
 
         System.out.println("main thread:"+Thread.currentThread().getName());
         TestParam testParam = new TestParam();
         testParam.setEmail("xiaoqiang-0504@163.com");
         TestEvent testEvent = new TestEvent(testParam);
-        context.publishEvent(testEvent);
+//        context.publishEvent(testEvent);
+        TestPublish.publishEvent(testEvent);
+
+        try {
+            Thread.sleep(3000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+
+        TestPublish.publishEvent(testEvent);
 
 //        TestParam testParam1 = new TestParam();
 //        testParam1.setEmail("xiaoqiang-0504@163.com");

@@ -7,6 +7,8 @@ import io.netty.channel.ChannelHandlerContext;
 import io.netty.channel.SimpleChannelInboundHandler;
 import io.netty.util.CharsetUtil;
 
+import java.util.Scanner;
+
 /**
  * <code>EchoClientHandler</code>
  *
@@ -21,8 +23,18 @@ public class EchoClientHandler extends SimpleChannelInboundHandler<ByteBuf> {
     @Override
     public void channelActive(ChannelHandlerContext ctx) {
         //当被通知该 channel 是活动的时候就发送信息
-        ctx.writeAndFlush(Unpooled.copiedBuffer("Netty rocks!",
-                CharsetUtil.UTF_8));
+//        ctx.writeAndFlush(Unpooled.copiedBuffer("Netty rocks!",
+//                CharsetUtil.UTF_8));
+        Scanner scanner = new Scanner(System.in);
+        while (scanner.hasNext()) {
+            String input = scanner.next();
+            if(input.equals("quit")){
+                break;
+            }
+            ctx.write(Unpooled.copiedBuffer(input,
+                    CharsetUtil.UTF_8));
+        }
+        ctx.flush();
     }
 
     @Override

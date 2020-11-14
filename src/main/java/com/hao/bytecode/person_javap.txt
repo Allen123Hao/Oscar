@@ -1,0 +1,240 @@
+Classfile /Users/haoxueqiang/WorkSpace/oscar/target/classes/com/hao/bytecode/Person.class
+  Last modified 2020-9-30; size 1452 bytes
+  MD5 checksum 988fb86749c21d91805ca555874e1300
+  Compiled from "Person.java"
+public class com.hao.bytecode.Person
+  minor version: 0
+  major version: 52
+  flags: ACC_PUBLIC, ACC_SUPER
+Constant pool:
+   #1 = Methodref          #16.#46        // java/lang/Object."<init>":()V
+   #2 = Fieldref           #15.#47        // com/hao/bytecode/Person.name:Ljava/lang/String;
+   #3 = Fieldref           #15.#48        // com/hao/bytecode/Person.age:I
+   #4 = Class              #49            // java/lang/StringBuilder
+   #5 = Methodref          #4.#46         // java/lang/StringBuilder."<init>":()V
+   #6 = Methodref          #15.#50        // com/hao/bytecode/Person.getName:()Ljava/lang/String;
+   #7 = Methodref          #4.#51         // java/lang/StringBuilder.append:(Ljava/lang/String;)Ljava/lang/StringBuilder;
+   #8 = String             #52            // \t
+   #9 = Methodref          #15.#53        // com/hao/bytecode/Person.getAge:()I
+  #10 = Methodref          #4.#54         // java/lang/StringBuilder.append:(I)Ljava/lang/StringBuilder;
+  #11 = Methodref          #4.#55         // java/lang/StringBuilder.toString:()Ljava/lang/String;
+  #12 = String             #56            // Allen
+  #13 = Methodref          #15.#57        // com/hao/bytecode/Person.setDesc:(Ljava/lang/String;)Ljava/lang/String;
+  #14 = Methodref          #15.#58        // com/hao/bytecode/Person.setAgeDesc:(Ljava/lang/String;)I
+  #15 = Class              #59            // com/hao/bytecode/Person
+  #16 = Class              #60            // java/lang/Object
+  #17 = Utf8               name
+  #18 = Utf8               Ljava/lang/String;
+  #19 = Utf8               age
+  #20 = Utf8               I
+  #21 = Utf8               <init>
+  #22 = Utf8               ()V
+  #23 = Utf8               Code
+  #24 = Utf8               LineNumberTable
+  #25 = Utf8               LocalVariableTable
+  #26 = Utf8               this
+  #27 = Utf8               Lcom/hao/bytecode/Person;
+  #28 = Utf8               getName
+  #29 = Utf8               ()Ljava/lang/String;
+  #30 = Utf8               setName
+  #31 = Utf8               (Ljava/lang/String;)V
+  #32 = Utf8               getAge
+  #33 = Utf8               ()I
+  #34 = Utf8               setAge
+  #35 = Utf8               (I)V
+  #36 = Utf8               getInfo
+  #37 = Utf8               setDesc
+  #38 = Utf8               (Ljava/lang/String;)Ljava/lang/String;
+  #39 = Utf8               desc
+  #40 = Utf8               setAgeDesc
+  #41 = Utf8               (Ljava/lang/String;)I
+  #42 = Utf8               getDesc
+  #43 = Utf8               getAgeDesc
+  #44 = Utf8               SourceFile
+  #45 = Utf8               Person.java
+  #46 = NameAndType        #21:#22        // "<init>":()V
+  #47 = NameAndType        #17:#18        // name:Ljava/lang/String;
+  #48 = NameAndType        #19:#20        // age:I
+  #49 = Utf8               java/lang/StringBuilder
+  #50 = NameAndType        #28:#29        // getName:()Ljava/lang/String;
+  #51 = NameAndType        #61:#62        // append:(Ljava/lang/String;)Ljava/lang/StringBuilder;
+  #52 = Utf8               \t
+  #53 = NameAndType        #32:#33        // getAge:()I
+  #54 = NameAndType        #61:#63        // append:(I)Ljava/lang/StringBuilder;
+  #55 = NameAndType        #64:#29        // toString:()Ljava/lang/String;
+  #56 = Utf8               Allen
+  #57 = NameAndType        #37:#38        // setDesc:(Ljava/lang/String;)Ljava/lang/String;
+  #58 = NameAndType        #40:#41        // setAgeDesc:(Ljava/lang/String;)I
+  #59 = Utf8               com/hao/bytecode/Person
+  #60 = Utf8               java/lang/Object
+  #61 = Utf8               append
+  #62 = Utf8               (Ljava/lang/String;)Ljava/lang/StringBuilder;
+  #63 = Utf8               (I)Ljava/lang/StringBuilder;
+  #64 = Utf8               toString
+{
+  public com.hao.bytecode.Person();
+    descriptor: ()V
+    flags: ACC_PUBLIC
+    Code:
+      stack=1, locals=1, args_size=1
+         0: aload_0
+         1: invokespecial #1                  // Method java/lang/Object."<init>":()V
+         4: return
+      LineNumberTable:
+        line 11: 0
+      LocalVariableTable:
+        Start  Length  Slot  Name   Signature
+            0       5     0  this   Lcom/hao/bytecode/Person;
+
+  public java.lang.String getName();
+    descriptor: ()Ljava/lang/String;
+    flags: ACC_PUBLIC
+    Code:
+      stack=1, locals=1, args_size=1
+         0: aload_0
+         1: getfield      #2                  // Field name:Ljava/lang/String;
+         4: areturn
+      LineNumberTable:
+        line 17: 0
+      LocalVariableTable:
+        Start  Length  Slot  Name   Signature
+            0       5     0  this   Lcom/hao/bytecode/Person;
+
+  public void setName(java.lang.String);
+    descriptor: (Ljava/lang/String;)V
+    flags: ACC_PUBLIC
+    Code:
+      stack=2, locals=2, args_size=2
+         0: aload_0
+         1: aload_1
+         2: putfield      #2                  // Field name:Ljava/lang/String;
+         5: return
+      LineNumberTable:
+        line 21: 0
+        line 22: 5
+      LocalVariableTable:
+        Start  Length  Slot  Name   Signature
+            0       6     0  this   Lcom/hao/bytecode/Person;
+            0       6     1  name   Ljava/lang/String;
+
+  public int getAge();
+    descriptor: ()I
+    flags: ACC_PUBLIC
+    Code:
+      stack=1, locals=1, args_size=1
+         0: aload_0
+         1: getfield      #3                  // Field age:I
+         4: ireturn
+      LineNumberTable:
+        line 24: 0
+      LocalVariableTable:
+        Start  Length  Slot  Name   Signature
+            0       5     0  this   Lcom/hao/bytecode/Person;
+
+  public void setAge(int);
+    descriptor: (I)V
+    flags: ACC_PUBLIC
+    Code:
+      stack=2, locals=2, args_size=2
+         0: aload_0
+         1: iload_1
+         2: putfield      #3                  // Field age:I
+         5: return
+      LineNumberTable:
+        line 28: 0
+        line 29: 5
+      LocalVariableTable:
+        Start  Length  Slot  Name   Signature
+            0       6     0  this   Lcom/hao/bytecode/Person;
+            0       6     1   age   I
+
+  public java.lang.String getInfo();
+    descriptor: ()Ljava/lang/String;
+    flags: ACC_PUBLIC
+    Code:
+      stack=2, locals=1, args_size=1
+         0: new           #4                  // class java/lang/StringBuilder
+         3: dup
+         4: invokespecial #5                  // Method java/lang/StringBuilder."<init>":()V
+         7: aload_0
+         8: invokevirtual #6                  // Method getName:()Ljava/lang/String;
+        11: invokevirtual #7                  // Method java/lang/StringBuilder.append:(Ljava/lang/String;)Ljava/lang/StringBuilder;
+        14: ldc           #8                  // String \t
+        16: invokevirtual #7                  // Method java/lang/StringBuilder.append:(Ljava/lang/String;)Ljava/lang/StringBuilder;
+        19: aload_0
+        20: invokevirtual #9                  // Method getAge:()I
+        23: invokevirtual #10                 // Method java/lang/StringBuilder.append:(I)Ljava/lang/StringBuilder;
+        26: invokevirtual #11                 // Method java/lang/StringBuilder.toString:()Ljava/lang/String;
+        29: areturn
+      LineNumberTable:
+        line 32: 0
+      LocalVariableTable:
+        Start  Length  Slot  Name   Signature
+            0      30     0  this   Lcom/hao/bytecode/Person;
+
+  public java.lang.String setDesc(java.lang.String);
+    descriptor: (Ljava/lang/String;)Ljava/lang/String;
+    flags: ACC_PUBLIC
+    Code:
+      stack=1, locals=2, args_size=2
+         0: aload_1
+         1: areturn
+      LineNumberTable:
+        line 36: 0
+      LocalVariableTable:
+        Start  Length  Slot  Name   Signature
+            0       2     0  this   Lcom/hao/bytecode/Person;
+            0       2     1  desc   Ljava/lang/String;
+
+  public int setAgeDesc(java.lang.String);
+    descriptor: (Ljava/lang/String;)I
+    flags: ACC_PUBLIC
+    Code:
+      stack=1, locals=2, args_size=2
+         0: aload_0
+         1: getfield      #3                  // Field age:I
+         4: ireturn
+      LineNumberTable:
+        line 40: 0
+      LocalVariableTable:
+        Start  Length  Slot  Name   Signature
+            0       5     0  this   Lcom/hao/bytecode/Person;
+            0       5     1  desc   Ljava/lang/String;
+
+  public java.lang.String getDesc(java.lang.String);
+    descriptor: (Ljava/lang/String;)Ljava/lang/String;
+    flags: ACC_PUBLIC
+    Code:
+      stack=2, locals=2, args_size=2
+         0: aload_0
+         1: ldc           #12                 // String Allen
+         3: invokevirtual #13                 // Method setDesc:(Ljava/lang/String;)Ljava/lang/String;
+         6: areturn
+      LineNumberTable:
+        line 44: 0
+      LocalVariableTable:
+        Start  Length  Slot  Name   Signature
+            0       7     0  this   Lcom/hao/bytecode/Person;
+            0       7     1  desc   Ljava/lang/String;
+
+  public int getAgeDesc(java.lang.String);
+    descriptor: (Ljava/lang/String;)I
+    flags: ACC_PUBLIC
+    Code:
+      stack=2, locals=2, args_size=2
+         0: aload_0
+         1: ldc           #12                 // String Allen
+         3: invokevirtual #14                 // Method setAgeDesc:(Ljava/lang/String;)I
+         6: pop
+         7: aload_0
+         8: getfield      #3                  // Field age:I
+        11: ireturn
+      LineNumberTable:
+        line 48: 0
+        line 49: 7
+      LocalVariableTable:
+        Start  Length  Slot  Name   Signature
+            0      12     0  this   Lcom/hao/bytecode/Person;
+            0      12     1  desc   Ljava/lang/String;
+}
+SourceFile: "Person.java"

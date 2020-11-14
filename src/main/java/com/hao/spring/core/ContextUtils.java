@@ -19,7 +19,7 @@ public class ContextUtils {
 
     public static void setApplicationContext(ApplicationContext applicationContext) {
         synchronized (ContextUtils.class) {
-            log.debug("setApplicationContext, notifyAll");
+            log.info("setApplicationContext, notifyAll");
             ContextUtils.applicationContext = applicationContext;
             ContextUtils.class.notifyAll();
         }
@@ -29,13 +29,13 @@ public class ContextUtils {
         synchronized (ContextUtils.class) {
             while (applicationContext == null) {
                 try {
-                    log.debug("getApplicationContext, wait...");
+                    log.info("getApplicationContext, wait...");
                     ContextUtils.class.wait(60000);
                     if (applicationContext == null) {
                         log.warn("Have been waiting for ApplicationContext to be set for 1 minute", new Exception());
                     }
                 } catch (InterruptedException ex) {
-                    log.debug("getApplicationContext, wait interrupted");
+                    log.info("getApplicationContext, wait interrupted");
                 }
             }
             return applicationContext;

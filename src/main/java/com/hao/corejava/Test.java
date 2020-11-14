@@ -8,7 +8,7 @@ import java.io.IOException;
 import java.io.InputStream;
 
 /**
- * <code>Test</code>
+ * <code>AppTest</code>
  *
  * @description:
  * @author: Hao Xueqiang(xueqiang.hao@tendcloud.com)

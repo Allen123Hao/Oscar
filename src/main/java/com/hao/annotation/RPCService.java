@@ -17,7 +17,7 @@ import java.lang.annotation.Target;
  */
 @Target({ElementType.TYPE})
 @Retention(RetentionPolicy.RUNTIME)
-@Component
+@Component(value = "rpcService")
 public @interface RPCService {
     Class<?> value();
 }

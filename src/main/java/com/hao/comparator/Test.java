@@ -3,7 +3,7 @@ package com.hao.comparator;
 import java.util.*;
 
 /**
- * <code>Test</code>
+ * <code>AppTest</code>
  *
  * @description:
  * @author: Hao Xueqiang(xueqiang.hao@tendcloud.com)

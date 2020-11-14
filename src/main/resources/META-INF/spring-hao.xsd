@@ -1,0 +1,18 @@
+<xs:schema attributeFormDefault="unqualified"
+           elementFormDefault="qualified"
+           targetNamespace="http://www.edu.hao.com/schema/scf"
+           xmlns:xs="http://www.w3.org/2001/XMLSchema">
+    <xs:element name="service">
+        <xs:complexType>
+            <xs:simpleContent>
+                <xs:extension base="xs:string">
+                    <xs:attribute type="xs:string" name="id" use="required"/>
+                    <xs:attribute type="xs:anySimpleType" name="interface" use="required"/>
+                    <xs:attribute type="xs:string" name="url" use="required"/>
+                    <xs:attribute type="xs:string" name="serVersion" />
+                    <xs:attribute type="xs:string" name="desc" />
+                </xs:extension>
+            </xs:simpleContent>
+        </xs:complexType>
+    </xs:element>
+</xs:schema>

@@ -9,6 +9,18 @@ package com.hao.test;
  * @version: 1.0
  */
 public class Car {
+
+    public Car(){
+        System.out.println("Car的无参构造方法");
+    }
+
+    public Car(Integer id,String name){
+        this();
+        this.id = id;
+        this.name = name;
+        System.out.println(this);
+    }
+
     private Integer id;
     private String name;
 
@@ -45,5 +57,10 @@ public class Car {
         int result = id.hashCode();
         result = 31 * result + name.hashCode();
         return result;
+    }
+
+    public void func2(){
+        System.out.println(this);
+
     }
 }

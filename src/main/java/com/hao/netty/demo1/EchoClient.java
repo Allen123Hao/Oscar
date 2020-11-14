@@ -54,6 +54,7 @@ public class EchoClient {
     }
 
     public static void main(String[] args) throws Exception {
+        args = new String[]{"localhost","8081"};
         if (args.length != 2) {
             System.err.println(
                     "Usage: " + EchoClient.class.getSimpleName() +

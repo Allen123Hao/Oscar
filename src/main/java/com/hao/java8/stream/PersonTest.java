@@ -4,6 +4,7 @@ import com.google.gson.Gson;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 import java.util.stream.Collectors;
 
 /**
@@ -28,6 +29,7 @@ public class PersonTest {
                         || p.getAge().intValue() == 20)
                 .collect(Collectors.toList());
         System.out.println(new Gson().toJson(list));
+        Map<String,Integer> map = list.stream().collect(Collectors.toMap(p->p.getName(), p->p.getAge()));
     }
 
     public static void main(String[] args) {

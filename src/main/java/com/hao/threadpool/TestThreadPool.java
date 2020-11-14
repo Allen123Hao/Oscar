@@ -1,6 +1,6 @@
 /**
  * Project Name:ThreadTest
- * File Name:Test.java
+ * File Name:AppTest.java
  * Package Name:bb
  * Date:2015年1月12日下午4:21:51
  * Copyright (c) 2015, jujiasoft All Rights Reserved.
@@ -9,7 +9,7 @@
 
 package com.hao.threadpool;  
 /**
- * ClassName:Test <br/>
+ * ClassName:AppTest <br/>
  * Function: TODO ADD FUNCTION. <br/>
  * Reason:	 TODO ADD REASON. <br/>
  * Date:     2015年1月12日 下午4:21:51 <br/>

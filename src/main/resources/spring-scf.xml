@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:scf="http://www.edu.hao.com/schema/scf"
+       xmlns="http://www.springframework.org/schema/beans"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+          http://www.springframework.org/schema/beans/spring-beans.xsd
+          http://www.springframework.org/schema/context
+          http://www.springframework.org/schema/context/spring-context-4.0.xsd
+          http://www.edu.hao.com/schema/scf
+          http://www.edu.hao.com/schema/scf.xsd">
+
+    <context:component-scan base-package="com.hao.spring.schema"></context:component-scan>
+
+    <scf:service id="proxyService" interface="com.hao.spring.schema.ISCFService"
+                 url="tcp://test/TestService" desc="测试spring的自定义标签"/>
+
+
+</beans>
