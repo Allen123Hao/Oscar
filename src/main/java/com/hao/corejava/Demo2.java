@@ -9,7 +9,7 @@ package com.hao.corejava;
  * @version: 1.0
  */
 public class Demo2 {
-//    private Demo1 demo1;
+//    private Solution_70 demo1;
     private static Demo1 demo1 = Demo1.getInstance();
     public Demo2(){
         System.out.println("This is Demo2 default Constructor.");

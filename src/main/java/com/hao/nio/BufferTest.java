@@ -1,5 +1,7 @@
 package com.hao.nio;
 
+import org.junit.Test;
+
 import java.io.File;
 import java.io.RandomAccessFile;
 import java.nio.ByteBuffer;

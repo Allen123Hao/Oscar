@@ -4,7 +4,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 /**
- * <code>Demo1</code>
+ * <code>Solution_70</code>
  *
  * @description:
  * @author: Hao Xueqiang(xueqiang.hao@tendcloud.com)
@@ -15,7 +15,7 @@ public class Demo1 {
     private static final Demo1 instance = new Demo1();
     private Map<String,String> config = new HashMap<String,String>();
     private Demo1(){
-        System.out.println("This is Demo1 default Constructor");
+        System.out.println("This is Solution_70 default Constructor");
         config.put("key1", "value1");
         config.put("key2", "value2");
         config.put("key3","value3");
@@ -28,7 +28,7 @@ public class Demo1 {
         return instance;
     }
     public static void fun1(){
-        System.out.println("This is fun1 of Demo1.");
+        System.out.println("This is fun1 of Solution_70.");
     }
     public String getConfigByKey(String key){
         return config.get(key);

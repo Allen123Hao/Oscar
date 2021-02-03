@@ -8,7 +8,7 @@ package com.hao.test;
  * @creation: 2016/12/15
  * @version: 1.0
  */
-public class Car {
+public class Car implements Product {
 
     public Car(){
         System.out.println("Car的无参构造方法");

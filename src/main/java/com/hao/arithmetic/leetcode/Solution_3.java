@@ -1,19 +1,16 @@
 package com.hao.arithmetic.leetcode;
 
-import java.util.ArrayList;
-import java.util.LinkedList;
-import java.util.List;
-import java.util.Queue;
+import java.util.*;
 
 /**
- * <code>Demo1</code>
+ * <code>Solution_70</code>
  *
- * @description:
+ * @description: 最大子序列
  * @author: Hao Xueqiang(xueqiang.hao@tendcloud.com)
  * @creation: 2018/12/31
  * @version: 1.0
  */
-public class Solution {
+public class Solution_3 {
     /**
      * @resource https://leetcode.com/problems/longest-substring-without-repeating-characters/
      * @param s
@@ -65,9 +62,23 @@ public class Solution {
         return max;
     }
 
+    public int lengthOfLongestSubstring2(String s) {
+        int n = s.length(), ans = 0;
+        Map<Character, Integer> map = new HashMap<>();
+        for (int end = 0, start = 0; end < n; end++) {
+            char alpha = s.charAt(end);
+            if (map.containsKey(alpha)) {
+                start = Math.max(map.get(alpha), start);
+            }
+            ans = Math.max(ans, end - start + 1);
+            map.put(s.charAt(end), end + 1);
+        }
+        return ans;
+    }
+
     public static void main(String[] args) {
-        Solution solution = new Solution();
-        int maxLength = solution.lengthOfLongestSubstring("abcbefaedf");
+        Solution_3 solution3 = new Solution_3();
+        int maxLength = solution3.lengthOfLongestSubstring("abcbefaedf");
         System.out.println(maxLength);
     }
 }

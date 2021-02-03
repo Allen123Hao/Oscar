@@ -1,11 +1,13 @@
 package com.hao.test;
 
+import com.google.gson.Gson;
 import org.apache.commons.collections.CollectionUtils;
 import org.apache.commons.collections.ListUtils;
 import org.junit.Test;
 import scala.math.Ordering;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 
 /**
@@ -20,10 +22,14 @@ public class Demo {
 
     @Test
     public void func1(){
-        int amount = 100000;
-        for(int i=1;i<=10;i++){
-            amount*=1.5;
-            System.out.println(amount);
+        retry:
+        for(int i=0;i<3;i++){
+            for(int j=0;j<5;j++){
+                if(j == 3){
+                    continue retry;
+                }
+                System.out.println(j);
+            }
         }
     }
 
@@ -38,5 +44,24 @@ public class Demo {
     public void func3(){
         System.out.println(Demo.class.getName());
         System.out.println(Demo.class.getSimpleName());
+    }
+
+    @Test
+    public void test4(){
+        Audi audi = new Audi();
+        audi.setId(1);
+        audi.setName("奥迪");
+        audi.setPrice(100.00f);
+        Car car = audi;
+        System.out.println(new Gson().toJson(car));
+        Product product = audi;
+        System.out.println(new Gson().toJson(product));
+    }
+
+    @Test
+    public void test5(){
+        HashMap<String,String> map = new HashMap<>();
+        map.put("1","hao");
+        map.size();
     }
 }

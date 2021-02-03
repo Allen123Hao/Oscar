@@ -1,7 +1,6 @@
 package com.hao.threadpool;
 
-import java.util.concurrent.ExecutorService;
-import java.util.concurrent.Executors;
+import java.util.concurrent.*;
 
 /**
  * <code>ThreadPoolExecutorTest</code>
@@ -13,13 +12,27 @@ import java.util.concurrent.Executors;
  */
 public class ThreadPoolExecutorTest {
 
-
-    public static void main(String[] args) {
+    public void test1(){
         ExecutorService service = Executors.newFixedThreadPool(3);
         service.execute(new MyRunnable());
         service.execute(new MyRunnable());
         service.execute(new MyRunnable());
         service.execute(new MyRunnable());
+    }
+
+    public void test2(){
+        ExecutorService service = new ThreadPoolExecutor(3,3,0L, TimeUnit.MILLISECONDS,new LinkedBlockingQueue<>(1));
+        service.execute(new MyRunnable());
+        service.execute(new MyRunnable());
+        service.execute(new MyRunnable());
+        service.execute(new MyRunnable());
+        service.execute(new MyRunnable());
+    }
+
+
+    public static void main(String[] args) {
+        ThreadPoolExecutorTest executorTest = new ThreadPoolExecutorTest();
+        executorTest.test2();
     }
 
 

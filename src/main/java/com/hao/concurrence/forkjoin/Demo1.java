@@ -3,7 +3,7 @@ package com.hao.concurrence.forkjoin;
 import java.util.concurrent.atomic.AtomicInteger;
 
 /**
- * <code>Demo1</code>
+ * <code>Solution_70</code>
  *
  * @description:
  * @author: Hao Xueqiang(xueqiang.hao@tendcloud.com)
