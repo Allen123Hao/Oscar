@@ -1,5 +1,10 @@
 package com.hao.corejava;
 
+import org.junit.Test;
+
+import java.util.ArrayList;
+import java.util.List;
+
 /**
  * <code>Demo4</code>
  *

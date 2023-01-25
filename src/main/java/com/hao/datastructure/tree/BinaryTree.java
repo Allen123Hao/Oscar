@@ -1,9 +1,6 @@
 package com.hao.datastructure.tree;
 
-import java.util.ArrayList;
-import java.util.LinkedList;
-import java.util.List;
-import java.util.Stack;
+import java.util.*;
 
 /**
  * <code>BinaryTree</code>
@@ -20,7 +17,7 @@ public class BinaryTree {
         BinaryTree tree = new BinaryTree();
         int[] datas = new int[]{1,2,3,4,5,6,7,8,9};
         List<Node> nodelist = new LinkedList<>();
-        tree.createBinaryTree(datas, nodelist);
+        tree.createBinaryTree1(datas, nodelist);
         Node root = nodelist.get(0);
         System.out.println("递归先序遍历：");
         tree.preOrderTraversal(root);
@@ -50,6 +47,21 @@ public class BinaryTree {
         System.out.println(rst);
     }
 
+    public void createBinaryTree1(int[] datas,List<Node> nodes){
+        for(int i=0;i<datas.length;i++){
+            Node node = new Node(datas[i]);
+            nodes.add(node);
+        }
+//        Node root = nodes.get(0);
+
+        for(int k=0;k<nodes.size()/2;k++){
+            Node root = nodes.get(k);
+            root.lchild = nodes.get(2*k+1);
+            if(2*k+2 <= nodes.size()-1){
+                root.rchild = nodes.get(2*k+2);
+            }
+        }
+    }
 
 
     /**

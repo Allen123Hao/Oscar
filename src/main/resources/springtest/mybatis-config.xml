@@ -36,7 +36,7 @@
 		</environment>
 	</environments>
 
-	<mappers>
-		<mapper resource="sqlmap/student_test_mapper.xml"></mapper>
-	</mappers>
+<!--	<mappers>-->
+<!--		<mapper resource="sqlmap/student_test_mapper.xml"></mapper>-->
+<!--	</mappers>-->
 </configuration>

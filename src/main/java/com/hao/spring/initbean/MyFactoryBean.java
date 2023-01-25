@@ -13,6 +13,10 @@ import org.springframework.beans.factory.InitializingBean;
  */
 public class MyFactoryBean implements FactoryBean, InitializingBean {
 
+    public MyFactoryBean() {
+        System.out.println("执行MyFactoryBean的有参构造方法");
+    }
+
     @Override
     public Object getObject() throws Exception {
         System.out.println("执行getObject");

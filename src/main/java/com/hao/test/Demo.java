@@ -9,6 +9,7 @@ import scala.math.Ordering;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
+import java.util.concurrent.ConcurrentHashMap;
 
 /**
  * <code>Demo</code>
@@ -42,8 +43,11 @@ public class Demo {
 
     @Test
     public void func3(){
-        System.out.println(Demo.class.getName());
-        System.out.println(Demo.class.getSimpleName());
+        int[] a = new int[3];
+        a[1] = 1;
+        a[2] = 2;
+        a[3] = 3;
+        System.out.println(a);
     }
 
     @Test
@@ -60,8 +64,10 @@ public class Demo {
 
     @Test
     public void test5(){
-        HashMap<String,String> map = new HashMap<>();
-        map.put("1","hao");
-        map.size();
+        System.out.println(System.currentTimeMillis());
+        System.out.println(System.currentTimeMillis()%1000);
+        long i = 5000 - System.currentTimeMillis()%1000;
+        System.out.println(i);
+
     }
 }

@@ -49,7 +49,7 @@ public class App {
     }
 
     public static void main(String[] args){
-//        App.testSpringXml();
-        App.testSpringSCFXml();
+        App.testSpringXml();
+//        App.testSpringSCFXml();
     }
 }

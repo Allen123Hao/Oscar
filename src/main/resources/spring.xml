@@ -9,10 +9,7 @@
               <bean class="com.hao.corejava.Demo2" init-method="initFun"></bean>
         -->
 
-    <bean id="student" class="com.hao.spring.core.Student">
-        <constructor-arg name="name" value="小明"></constructor-arg>
-        <constructor-arg name="age" value="20"></constructor-arg>
-    </bean>
+
 
     <bean id="register" class="com.hao.spring.core.ApplicationContextRegister">
         <property name="student" ref="student" />
@@ -25,8 +22,20 @@
 <!--        </property>-->
     </bean>
 
+    <bean id="student" class="com.hao.spring.core.Student">
+        <constructor-arg name="name" value="小明"></constructor-arg>
+        <constructor-arg name="age" value="20"></constructor-arg>
+    </bean>
+
     <bean id="studentAction" class="com.hao.spring.core.StudenAction">
         <constructor-arg name="name" value="王五"/>
+        <property name="name">
+            <value>李四</value>
+        </property>
+    </bean>
+
+    <bean id="teacher" class="com.hao.spring.core.Teacher">
+<!--        <constructor-arg name="name" value="王老师"/>-->
         <property name="name">
             <value>李四</value>
         </property>

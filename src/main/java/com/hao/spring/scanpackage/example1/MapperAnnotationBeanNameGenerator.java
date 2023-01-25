@@ -29,7 +29,7 @@ public class MapperAnnotationBeanNameGenerator extends AnnotationBeanNameGenerat
     }
 
     /*
-     * 所有注解信息都是通过.class文件解析出来的, 基于ASM实现, 也意味着这个类还被有被加载
+     * 所有注解信息都是通过.class文件解析出来的, 基于ASM实现, 也意味着这个类还没有被加载
      */
     @Override
     public String generateBeanName(BeanDefinition definition,

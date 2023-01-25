@@ -1,10 +1,12 @@
 package com.oscar.service;
 
+import cn.hutool.json.JSONUtil;
 import com.oscar.bean.Student;
 import com.oscar.bean.StudentExample;
 import com.oscar.mapper.StudentMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 /**
  * <code>TestService</code>
@@ -18,6 +20,12 @@ import org.springframework.stereotype.Service;
 public class TestService {
     @Autowired
     private StudentMapper studentMapper;
+
+    @Transactional(readOnly = true)
+    public void queryStudent(){
+        Student student = studentMapper.selectByPrimaryKey(1);
+        System.out.println(JSONUtil.toJsonStr(student));
+    }
 
     public void testStudent1(){
         Student student = new Student();

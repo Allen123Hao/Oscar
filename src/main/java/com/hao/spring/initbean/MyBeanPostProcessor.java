@@ -30,7 +30,7 @@ public class MyBeanPostProcessor implements BeanPostProcessor, BeanDefinitionReg
     }
 
     public MyBeanPostProcessor(String name) {
-        System.out.println("执行MyBeanPostProcessor的有参构造方法");
+        System.out.println("执行MyBeanPostProcessor的有参构造方法，name:"+name);
         this.name = name;
     }
 

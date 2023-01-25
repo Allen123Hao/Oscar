@@ -1,5 +1,7 @@
 package com.hao.arithmetic.leetcode;
 
+import org.junit.Test;
+
 /**
  * <code>Solution_70</code>
  *
@@ -80,4 +82,25 @@ public class Solution_70 {
         demo1.compute1(4);
         System.out.println("种数："+demo1.sum);
     }
+
+    //动态规划算法
+    public int climStairs(int n){
+        if(n==1){
+            return 1;
+        }
+        int[] dp = new int[n+1];
+        dp[1] = 1;
+        dp[2] = 2;
+        for(int i=3;i<=n;i++){
+            dp[i] = dp[i-1]+dp[i-2];
+        }
+        return dp[n];
+    }
+
+    @Test
+    public void test1(){
+        System.out.println(climStairs(1));
+    }
+
+
 }
